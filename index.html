@@ -14,39 +14,76 @@
     <title>Final Exam</title>
   </head>
   <body>
-    <h1 class="text-center mt-5">How to Manually Install a PHP-based Web Application: Wordpress</h1>
+  	<div class="row align-items-center">
+    <h1 class="text-center bg-light p-5">How to Manually Install a PHP-based Web Application: Wordpress</h1>
 
-    <p class="text-center mt-5">There are a few things you will need to get started when manually installing Wordpress on your computer. First, you will need access to an Amazon Lightsail account. It will ask for your credit card information, but don't worry, the first three months should be free! <br>
+   <u> <h2 class="text-center p-5">What You Need to Get Started</h2></u>
+  
 
-    You will also need to make sure you have Cyberduck installed on your computer.</p>
+    <p class="text-center p-3">There are a few things you will need to get started when manually installing Wordpress on your computer. </p>
 
-    <p class="text-center mt-5"> Now you can sign in at signin.aws.amazon.com. From here you can access Lightsail simply by searching it on the AWS homepage.</p>
+<div class="img-container p-5"
+    <ul class="list-group">
+  <li class="list-group-item">Download Wordpress from Wordpress.org/download</li>
+  <li class="list-group-item">An Amazon Lightsail Account</li>
+  <li class="list-group-item">Cyberduck Installed on your Computer</li>
+   <li class="list-group-item">Some level of competence, things can get tricky.</li>
+</ul>
+</div>
 
-    <p class="text-center mt-5 mb-5"> Your screen should look like this. You will want to press that big, orange "Create Instance" button.
+   
+
+    <u> <h2 class="text-center p-5">1. Sign in to Lightsail</h2></u>
+
+    <p class="text-center p-3"> Now you can sign in at signin.aws.amazon.com. From here you can access Lightsail simply by searching it on the AWS homepage.</p>
+
+     <u> <h2 class="text-center p-5">2. Create an Instance</h2></u>
+
+    <p class="text-center p-3"> Your screen should look like this. You will want to press that big, orange "Create Instance" button.
     	<img src="lightsail.png">
     </p>
 
-     <p class="text-center mt-5 mb-5">Select Linux/Unix as your platform, and Wordpress as your blueprint. Identify your instance as Wordpress-1. Press "Create Instance" at the bottom of your screen. <br>
+     <p class="text-center p-3">Select Linux/Unix as your platform, and Wordpress as your blueprint. Identify your instance as Wordpress-1. Press "Create Instance" at the bottom of your screen. <br></p>
 
-     You will probably have to wait a few minutes while the instance gets up and running. Once it does, open Cyberduck. Go to file>new connection. A window requesting the server, a username, and password should pop-up. Here, you will enter the IP Address provided by Lightsail, the username: bitnami, and a Lightsail Default Key. </p>
+      <u> <h2 class="text-center p-5">3. Connecting to Cyberduck</h2></u>
 
-     <p class="text-center mt-5 mb-5">Next, you are going to find the username and password of Lightsail Wordpress. Open your instance and press the orange "Connect using SSH" button. <br>
+     <p class="text-center p-3">You will probably have to wait a few minutes while the instance gets up and running. Once it does, open Cyberduck. Go to file>new connection. A window requesting the server, a username, and password should pop-up. Here, you will enter the IP Address provided by Lightsail, the username: bitnami, and a Lightsail Default Key. Once you create your connection, you will need to drag Wordpress, which you already downloaded from Wordpress.org/download into the htdocs folder on Cyberducks. In the future you will be able to add downloaded themes into this folder. </p>
+
+         <u> <h2 class="text-center p-5">4. Login to Wordpress</h2></u>
+
+     <p class="text-center p-3">Next, you are going to find the username and password of Lightsail Wordpress. Open your instance and press the orange "Connect using SSH" button. <br>
      	<img src="connect.png">
      </p>
 
-      <p class="text-center mt-5 mb-5">This should prompt a black terminal window. To learn what default password is assigned to our database software (MariaDB) enter the following command: <br>
-      	cat bitnami_application_password<br>
+      <p class="text-center p-3">This should prompt a black terminal window. To learn what default password is assigned to our database software (MariaDB) enter the following command: <br>
+      	cat bitnami_application_password<br></p>
+      	<p class="text-center p-3">
       	Hit enter, and it will list a randomly generated password. Copy and paste this password.<br>
       	Next, we will need to log in to the database software from the SSH Terminal. Type the following command:<br>
-      	mysql -u root -p<br>
-      You will be asked for your password. Paste the password you just saved to your clipboard here. *Command V* It's also a good idea to paste this password somewhere safe so you can access it again.</p>
+      	mysql -u root -p<br></p>
+      <p class="text-center p-3">You will be asked for your password. Paste the password you just saved to your clipboard here. *Command V* It's also a good idea to paste this password somewhere safe so you can access it again.</p>
 
-<p class="text-center mt-5 mb-5"> Now, you should be able to login to Wordpress. Copy the IP address provided by Lightsail on the instance you have created and paste that into your favorite web browser. You should see the installed Wordpress website.<br>
-	<img src="wp.png">
+<p class="text-center p-3"> Now, you should be able to login to Wordpress. Copy the IP address provided by Lightsail on the instance you have created and paste that into your favorite web browser. You should see the installed Wordpress website.<br>
+	<img class="p-5" src="wp.png"></p>
+<p class="text-center">
 At the end of your IP address in your search bar add /wp-admin and you will be brought to login screen for the backend of Wordpress. To login enter the username: user and paste the password that you generated in the black terminal window. 
+</p>
 
-<h2 class="text-center mt-5 mb-5"> Congratulations! You should now be able to access and edit your Wordpress page. 
-	<video>https://www.youtube.com/watch?v=kYY88h5J86A</video>
+<h2 class="text-center p-5"> Congratulations! You should now be able to access and edit your Wordpress page.</h2>
+
+<style>
+	.img-container {text-align: center;}
+</style>
+
+<div class="img-container p-5">
+	<div class="row ">
+    <a href="https://www.youtube.com/watch?v=kYY88h5J86A">
+<button type="button" class="btn btn-primary btn-lg">Click here for a Wordpress Tutorial for Beginners!</button>
+	</a>
+</div>
+  </div>
+
+</div>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
